@@ -2,12 +2,14 @@ require 'pry'
 class Person
     attr_accessor :bank_account
     attr_reader :name, :happiness, :hygiene
+
     def initialize(name)
         @name = name
         @bank_account = 25
         @happiness = 8
         @hygiene = 8
     end
+
     def happiness=(index)
         if index > 10
             @happiness = 10
@@ -17,6 +19,7 @@ class Person
             @happiness = index
         end
     end
+
     def hygiene=(index)
         if index > 10
             @hygiene = 10
@@ -26,6 +29,7 @@ class Person
             @hygiene = index
         end
     end
+
     def happy?
         if @happiness > 7
             return true
@@ -48,12 +52,9 @@ class Person
     end
 
     def take_bath
-     
       self.hygiene=(@hygiene += 4)
       return "♪ Rub-a-dub just relaxing in the tub ♫"
     end
-     # 5 before working out
-     # 7
 
     def work_out
       # @hygiene -= 3
@@ -70,7 +71,6 @@ class Person
 
     def start_conversation(person, topic)
       if topic == "politics"
-        
         person.happiness = person.happiness - 2
         self.happiness = self.happiness - 2
         return "blah blah partisan blah lobbyist"
@@ -80,7 +80,7 @@ class Person
         return "blah blah sun blah rain"
       else
         return "blah blah blah blah blah"
-      end
-        
+      end    
     end
+
 end
